@@ -46,13 +46,13 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
       <div className="rounded-sm border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950">
-        <p className="font-semibold">Contact form work in progress</p>
+        <p className="font-semibold">Prototype — final features to come</p>
         <p className="mt-1 text-amber-900/80">
-          Online booking is coming soon. For now, please call{" "}
-          <a href={site.phoneTel} className="font-medium underline">
-            {site.phoneDisplay}
-          </a>{" "}
-          or DM us on Instagram.
+          This is a working prototype built to show what Gloss Auto looks like
+          online. The final site can add direct calendar scheduling for
+          bookings, an enquiries dashboard that collects every message sent
+          from this page, or manual email replies. Kept simple for now — the
+          final choice is yours.
         </p>
       </div>
 

@@ -1,8 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -11,15 +10,10 @@ declare global {
 }
 
 /**
- * Renders a grid of Instagram reels with only ONE live embed mounted at a
- * time — the reel nearest the vertical centre of the viewport.
- *
- * Instagram's embed iframes are cross-origin, so the site can't reach inside
- * them to pause or mute videos. Mounting a single iframe at a time is the
- * only reliable way to get "one reel plays, no stray sound": the active reel
- * auto-plays muted, and when you scroll away it unmounts (audio stops) and
- * the next one mounts in its place. Everything else is a quiet placeholder
- * tile that links straight to Instagram.
+ * Renders a grid of Instagram reels as official embeds. Every reel mounts at
+ * once so visitors can play as many as they like. Instagram embeds autoplay
+ * muted by default and only make sound if a viewer taps the speaker inside a
+ * reel — the iframes are cross-origin, so the site can't mute them further.
  */
 export function ReelGrid({
   urls,
@@ -28,63 +22,12 @@ export function ReelGrid({
   urls: readonly string[];
   className?: string;
 }) {
-  const [activeUrl, setActiveUrl] = useState<string | null>(null);
-  const listRef = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    const list = listRef.current;
-    if (!list) return;
-    const cards = list.querySelectorAll<HTMLElement>("[data-reel]");
-    if (!cards.length) return;
-
-    // Approx half-height of a reel card. Anchoring on the card's TOP keeps
-    // the pick stable even when a mounted embed changes the card's height.
-    const HALF_CARD = 310;
-    let raf = 0;
-    let current: string | null = null;
-
-    const pickActive = () => {
-      const target = window.innerHeight / 2 - HALF_CARD;
-      let best: HTMLElement | null = null;
-      let bestDist = Infinity;
-      for (const card of cards) {
-        const rect = card.getBoundingClientRect();
-        if (rect.bottom < -160 || rect.top > window.innerHeight + 160) continue;
-        const dist = Math.abs(rect.top - target);
-        if (dist < bestDist) {
-          bestDist = dist;
-          best = card;
-        }
-      }
-      const next = best?.dataset.reel ?? null;
-      if (next !== current) {
-        current = next;
-        setActiveUrl(next);
-      }
-    };
-
-    const schedule = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(pickActive);
-    };
-
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
-    pickActive();
-
-    return () => {
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
-      cancelAnimationFrame(raf);
-    };
-  }, [urls]);
-
   return (
     <>
-      <ul ref={listRef} className={className}>
+      <ul className={className}>
         {urls.map((url) => (
-          <li key={url} data-reel={url} className="flex min-w-0 justify-center">
-            {activeUrl === url ? <ActiveReel url={url} /> : <ReelTile url={url} />}
+          <li key={url} className="flex min-w-0 justify-center">
+            <ReelEmbed url={url} />
           </li>
         ))}
       </ul>
@@ -97,8 +40,11 @@ export function ReelGrid({
   );
 }
 
-/** The one live embed. No `data-instgrm-captioned` attribute — captions stay hidden. */
-function ActiveReel({ url }: { url: string }) {
+/**
+ * One official Instagram embed.
+ * No `data-instgrm-captioned` attribute — captions stay hidden.
+ */
+function ReelEmbed({ url }: { url: string }) {
   useEffect(() => {
     // Let the blockquote commit to the DOM, then ask Instagram to build it.
     const t = window.setTimeout(() => window.instgrm?.Embeds.process(), 0);
@@ -139,32 +85,5 @@ function ActiveReel({ url }: { url: string }) {
         View this post on Instagram
       </a>
     </blockquote>
-  );
-}
-
-/** Quiet placeholder for reels that aren't the active one. */
-function ReelTile({ url }: { url: string }) {
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open reel on Instagram"
-      className="flex aspect-[9/16] w-full items-center justify-center rounded-sm border border-border bg-surface transition hover:border-black"
-    >
-      <span className="flex flex-col items-center gap-3 px-6 text-center">
-        <Image
-          src="/icons/instagram.svg"
-          alt=""
-          width={28}
-          height={28}
-          className="opacity-50 brightness-0"
-          unoptimized
-        />
-        <span className="font-display text-[11px] uppercase tracking-[0.2em] text-zinc-500">
-          Gloss Auto
-        </span>
-      </span>
-    </a>
   );
 }

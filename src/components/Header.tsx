@@ -58,10 +58,9 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={site.phoneTel}
-            className="inline-flex h-10 items-center justify-center rounded-sm bg-white px-3 text-sm font-semibold tracking-wide text-black transition hover:bg-zinc-200 sm:px-4"
+            className="hidden h-10 items-center justify-center rounded-sm bg-white px-4 text-sm font-semibold tracking-wide text-black transition hover:bg-zinc-200 sm:inline-flex"
           >
-            <span className="sm:hidden">Call</span>
-            <span className="hidden sm:inline">Call Now</span>
+            Call Now
           </a>
 
           <button

@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-black text-white sm:min-h-[calc(100svh-4.5rem)]">
+    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-black text-white sm:min-h-[calc(100svh-4.5rem)] sm:items-end sm:justify-start">
       <Image
         src={site.heroImage}
         alt="Freshly detailed car with a glossy finish"
@@ -24,13 +24,13 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-14 pt-16 sm:px-6 sm:pb-16 sm:pt-24">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 pb-14 pt-16 text-center sm:items-start sm:px-6 sm:pb-16 sm:pt-24 sm:text-left">
         <Image
           src={site.logoSrc}
           alt={`${site.name} logo`}
           width={320}
           height={110}
-          className="mb-8 h-auto w-[min(70vw,280px)] drop-shadow-[0_8px_30px_rgba(0,0,0,0.55)]"
+          className="mb-8 h-auto w-[min(60vw,240px)] drop-shadow-[0_8px_30px_rgba(0,0,0,0.55)] sm:w-[min(70vw,280px)]"
           priority
         />
 
@@ -42,31 +42,23 @@ export function Hero() {
           We come to you
         </h1>
 
-        <p className="mt-5 max-w-lg text-base leading-relaxed text-zinc-200 sm:text-lg">
+        <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-zinc-200 sm:mx-0 sm:max-w-lg sm:text-lg">
           Premium mobile car detailing. Interior, exterior, and paint correction
           right at your door.
         </p>
 
-        <div className="mt-9 flex w-full max-w-lg flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:gap-4">
-          <a
-            href={site.phoneTel}
-            className="inline-flex h-12 items-center justify-center rounded-sm bg-white px-8 font-display text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-zinc-200"
+        <div className="mt-9 flex w-full max-w-sm flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:items-stretch sm:gap-4">
+          <Link
+            href="/contact"
+            className="inline-flex h-12 w-full items-center justify-center rounded-sm bg-white px-8 font-display text-sm font-semibold uppercase tracking-[0.16em] text-black transition hover:bg-zinc-200 sm:w-auto"
           >
-            Call Now
-          </a>
-          <a
-            href={site.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-sm border border-white/35 bg-white/5 px-8 font-display text-sm font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:border-white hover:bg-white/10"
-          >
-            Book via DM
-          </a>
+            Get Free Quote
+          </Link>
           <Link
             href="/work"
-            className="inline-flex h-12 items-center justify-center rounded-sm px-4 font-display text-sm font-semibold uppercase tracking-[0.16em] text-zinc-300 underline-offset-4 transition hover:text-white hover:underline"
+            className="inline-flex h-12 w-full items-center justify-center rounded-sm border border-white/35 bg-white/5 px-8 font-display text-sm font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm transition hover:border-white hover:bg-white/10 sm:w-auto"
           >
-            See our work
+            See Our Work
           </Link>
         </div>
       </div>
