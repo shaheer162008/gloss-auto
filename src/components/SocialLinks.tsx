@@ -3,6 +3,11 @@ import { Icon } from "@/components/Icon";
 
 const links = [
   {
+    href: site.emailMailto,
+    label: "Email",
+    icon: "/icons/email.svg",
+  },
+  {
     href: site.socials.instagram,
     label: "Instagram",
     icon: "/icons/instagram.svg",
@@ -34,8 +39,9 @@ export function SocialLinks({
         <li key={link.label}>
           <a
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(link.href.startsWith("http")
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
             aria-label={link.label}
             className={`inline-flex h-10 w-10 items-center justify-center rounded-sm border transition ${
               onDark

@@ -6,8 +6,8 @@ import { Icon } from "@/components/Icon";
 
 /**
  * Floating Instagram + call buttons, bottom-right corner.
- * Shows on every page and screen size, but hides while the CTA band or
- * footer is on screen — those sections already have their own call/follow
+ * Shows on every page and screen size, but hides while the hero, CTA band,
+ * or footer is on screen — those sections already have their own call/follow
  * options, so the buttons never sit on top of them.
  */
 export function MobileCallBar() {
@@ -15,7 +15,7 @@ export function MobileCallBar() {
 
   useEffect(() => {
     const targets = Array.from(
-      document.querySelectorAll<HTMLElement>("#cta-band, #site-footer"),
+      document.querySelectorAll<HTMLElement>("#hero, #cta-band, #site-footer"),
     );
     if (!targets.length) return;
 

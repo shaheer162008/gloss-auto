@@ -4,7 +4,10 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center justify-center overflow-hidden bg-black text-white sm:items-end sm:justify-start">
+    <section
+      id="hero"
+      className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center justify-center overflow-hidden bg-black text-white sm:items-end sm:justify-start"
+    >
       <Image
         src={site.heroImage}
         alt="Freshly detailed car with a glossy finish"
