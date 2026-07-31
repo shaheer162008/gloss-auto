@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { workReels } from "@/lib/site";
 import { SectionHeading } from "@/components/ui";
-import { ReelGrid } from "@/components/ReelGrid";
+import { WorkGallery } from "@/components/WorkGallery";
 
 export function WorkPreview() {
   return (
@@ -10,13 +9,10 @@ export function WorkPreview() {
         <SectionHeading
           eyebrow="Results"
           title="Our work"
-          description="Real jobs from the feed. Watch the gloss come to life in these recent reels."
+          description="Recent jobs from Gloss Auto. Photos and videos of the latest finishes are on their way."
         />
 
-        <ReelGrid
-          urls={workReels.slice(0, 3)}
-          className="mt-12 grid gap-4 sm:grid-cols-3"
-        />
+        <WorkGallery count={3} className="mt-12 grid gap-5 sm:grid-cols-3" />
 
         <div className="mt-10 text-center">
           <Link

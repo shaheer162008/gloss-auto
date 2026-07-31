@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, workReels } from "@/lib/site";
+import { site } from "@/lib/site";
 import { PageHero, CtaBand } from "@/components/ui";
-import { ReelGrid } from "@/components/ReelGrid";
+import { WorkGallery } from "@/components/WorkGallery";
 
 export const metadata: Metadata = {
   title: "Our Work",
@@ -15,12 +15,12 @@ export default function WorkPage() {
       <PageHero
         eyebrow="Gallery"
         title="Our work"
-        description="Real Gloss Auto jobs, straight from Instagram. Tap any reel to watch the finish come to life."
+        description="Real Gloss Auto jobs, shot at your place. Photos and videos of recent finishes are coming soon."
       />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <ReelGrid urls={workReels} />
+          <WorkGallery />
 
           <p className="mt-10 text-center text-sm text-zinc-600">
             Want your car featured here?{" "}

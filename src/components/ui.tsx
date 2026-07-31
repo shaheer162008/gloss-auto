@@ -59,10 +59,10 @@ export function SectionHeading({
 
 export function CtaBand() {
   return (
-    <section className="border-y border-border bg-black text-white">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:px-6 md:flex-row md:items-center md:py-14">
-        <div>
-          <h2 className="font-display text-2xl font-semibold uppercase tracking-[0.08em] sm:text-3xl">
+    <section id="cta-band" className="border-y border-border bg-black text-white">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-12 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:gap-10 md:text-left md:py-14">
+        <div className="flex flex-col items-center md:items-start">
+          <h2 className="font-display text-2xl font-semibold uppercase leading-tight tracking-[0.08em] sm:text-3xl">
             Ready for a fresh gloss?
           </h2>
           <p className="mt-2 max-w-xl text-zinc-300">
@@ -70,16 +70,16 @@ export function CtaBand() {
             surrounds.
           </p>
         </div>
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+        <div className="flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:justify-start">
           <a
             href={site.phoneTel}
-            className="inline-flex h-12 items-center justify-center rounded-sm bg-white px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-black transition hover:bg-zinc-100"
+            className="inline-flex h-12 w-full items-center justify-center rounded-sm bg-white px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-black transition hover:bg-zinc-100 sm:w-auto"
           >
             Call Now
           </a>
           <Link
             href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-sm border border-white/30 px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-white"
+            className="inline-flex h-12 w-full items-center justify-center rounded-sm border border-white/30 px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-white sm:w-auto"
           >
             Contact Form
           </Link>

@@ -99,7 +99,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="hover:underline"
                   >
-                    Facebook — Gloss Auto
+                    Facebook Gloss Auto
                   </a>
                 </li>
               </ul>
@@ -111,7 +111,7 @@ export default function ContactPage() {
               Send a message
             </h2>
             <p className="mt-2 text-sm text-zinc-600">
-              Fill this in and we&apos;ll get back to you. No backend yet — it
+              Fill this in and we&apos;ll get back to you. No backend yet, it
               opens your email app with the details ready.
             </p>
             <div className="mt-8">

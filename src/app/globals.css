@@ -41,8 +41,10 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.12);
-  color: #000;
+  /* Inverted highlight so selected text stays visible on dark sections
+     (black CTA band, footer, hero) as well as on light sections. */
+  background: #000;
+  color: #fff;
 }
 
 :focus-visible {

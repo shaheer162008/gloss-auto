@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden bg-black text-white sm:min-h-[calc(100svh-4.5rem)] sm:items-end sm:justify-start">
+    <section className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-center justify-center overflow-hidden bg-black text-white sm:items-end sm:justify-start">
       <Image
         src={site.heroImage}
         alt="Freshly detailed car with a glossy finish"
@@ -35,7 +35,7 @@ export function Hero() {
         />
 
         <p className="font-display text-xs uppercase tracking-[0.3em] text-zinc-300">
-          Mobile detailing · {site.serviceArea}
+          Mobile detailing in {site.serviceArea}
         </p>
 
         <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold uppercase leading-[1.05] tracking-[0.04em] text-white sm:text-5xl md:text-6xl lg:text-7xl">

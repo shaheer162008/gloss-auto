@@ -23,14 +23,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:h-[4.5rem] sm:px-6">
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="shrink-0" aria-label={`${site.name} home`}>
           <Image
             src={site.logoSrc}
             alt={`${site.name} logo`}
             width={160}
             height={56}
-            className="h-10 w-auto sm:h-12"
+            className="h-11 w-auto sm:h-12"
             priority
           />
         </Link>
@@ -90,7 +90,7 @@ export function Header() {
       {open ? (
         <div
           id="mobile-nav"
-          className="max-h-[calc(100svh-4rem)] overflow-y-auto border-t border-white/10 bg-black lg:hidden"
+          className="max-h-[calc(100svh-4.5rem)] overflow-y-auto border-t border-white/10 bg-black lg:hidden"
         >
           <nav
             className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4"
