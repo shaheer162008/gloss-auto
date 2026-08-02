@@ -23,7 +23,7 @@ const platforms = [
   },
 ] as const;
 
-/** Follow cards — each tap opens the profile so visitors can follow Gloss Auto. */
+/** Follow cards. Each tap opens the profile so visitors can follow Gloss Auto. */
 export function InstagramFeed() {
   return (
     <section
@@ -48,7 +48,7 @@ export function InstagramFeed() {
                 className="flex flex-col items-center rounded-sm border border-border bg-white p-8 text-center transition hover:border-black"
               >
                 <Icon src={platform.icon} size={30} />
-                <span className="mt-4 font-display text-lg font-semibold uppercase tracking-[0.1em] text-black">
+                <span className="mt-4 font-display text-lg font-semibold uppercase tracking-widest text-black">
                   {platform.name}
                 </span>
                 <span className="mt-1 text-sm text-zinc-500">{platform.handle}</span>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { site } from "@/lib/site";
-import { ContactForm } from "@/components/ContactForm";
 import { Icon } from "@/components/Icon";
 import { SocialLinks } from "@/components/SocialLinks";
+import { ReviewCta } from "@/components/ReviewCta";
 import { PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Bookings & enquiries"
         title="Contact us"
-        description="Call for the fastest booking, or send a message with your car, suburb, and preferred time."
+        description="Call for the fastest booking, or open our Square booking page to pick a time."
       />
 
       <section className="py-16 sm:py-20">
@@ -107,19 +107,43 @@ export default function ContactPage() {
           </aside>
 
           <div className="rounded-sm border border-border bg-white p-6 sm:p-8">
-            <h2 className="font-display text-2xl font-semibold uppercase tracking-[0.08em]">
-              Send a message
-            </h2>
-            <p className="mt-2 text-sm text-zinc-600">
-              Fill this in and we&apos;ll get back to you. No backend yet, it
-              opens your email app with the details ready.
+            <p className="font-display text-xs uppercase tracking-[0.22em] text-zinc-500">
+              Preferred booking
             </p>
-            <div className="mt-8">
-              <ContactForm />
+            <h2 className="mt-3 font-display text-2xl font-semibold uppercase tracking-[0.08em] text-black">
+              Book on Square
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-zinc-600">
+              The fastest way to lock in your detail is through our Square
+              appointment page. Pick a time, add your details, and we&apos;ll
+              take it from there.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={site.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-black px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-zinc-800"
+              >
+                Book now
+              </a>
+              <a
+                href={site.phoneTel}
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-border px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-black transition hover:border-black"
+              >
+                Call instead
+              </a>
             </div>
+
+            <p className="mt-4 text-sm text-zinc-500">
+              If you prefer a quick chat first, call {site.phoneDisplay}.
+            </p>
           </div>
         </div>
       </section>
+
+      <ReviewCta />
     </>
   );
 }

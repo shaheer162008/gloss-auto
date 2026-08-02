@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { aboutHighlights, site, trustPoints } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 import { PageHero, CtaBand } from "@/components/ui";
+import { ReviewCta } from "@/components/ReviewCta";
 
 export const metadata: Metadata = {
   title: "About",
@@ -64,6 +65,8 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      <ReviewCta />
 
       <CtaBand />
     </>

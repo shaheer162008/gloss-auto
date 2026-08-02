@@ -17,7 +17,7 @@ const cameraGlyph = (
 
 /**
  * Placeholder work gallery. Each box is a slot for a real Gloss Auto photo
- * or video — swap the tile content for an image or video player later.
+ * or video. Swap the tile content for an image or video player later.
  */
 export function WorkGallery({
   count = 6,
@@ -31,7 +31,8 @@ export function WorkGallery({
       {Array.from({ length: count }).map((_, i) => (
         <li
           key={i}
-          className="flex aspect-[4/3] items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-surface text-zinc-400 transition hover:border-zinc-400"
+          className="flex items-center justify-center rounded-sm border border-dashed border-zinc-300 bg-surface text-zinc-400 transition hover:border-zinc-400"
+          style={{ aspectRatio: "4 / 3" }}
         >
           <span className="flex flex-col items-center gap-3 px-6 text-center">
             {cameraGlyph}

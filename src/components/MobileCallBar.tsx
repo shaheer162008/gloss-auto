@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icon";
 /**
  * Floating Instagram + call buttons, bottom-right corner.
  * Shows on every page and screen size, but hides while the hero, CTA band,
- * or footer is on screen — those sections already have their own call/follow
+ * or footer is on screen. Those sections already have their own call/follow
  * options, so the buttons never sit on top of them.
  */
 export function MobileCallBar() {

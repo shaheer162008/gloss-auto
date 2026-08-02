@@ -5,11 +5,11 @@ type IconProps = {
   alt?: string;
   className?: string;
   size?: number;
-  /** Black SVG icons — onLight keeps them dark for white UI */
+  /** Black SVG icons. onLight keeps them dark for white UI */
   tone?: "onDark" | "onLight";
 };
 
-/** Renders an SVG from /public/icons — swap files in place to update icons. */
+/** Renders an SVG from /public/icons. Swap files in place to update icons. */
 export function Icon({
   src,
   alt = "",

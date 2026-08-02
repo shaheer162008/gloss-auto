@@ -6,6 +6,7 @@ export const site = {
   phoneTel: "tel:+61432677437",
   email: "glossautoqld@gmail.com",
   emailMailto: "mailto:glossautoqld@gmail.com",
+  bookingUrl: "https://squareup.com/appointments/book/LNQB1AMB9307D",
   serviceArea: "Moreton Bay & Surrounds",
   locationHint: "Burpengary QLD & surrounds",
   logoSrc: "/gloss-auto.png",

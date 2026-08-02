@@ -4,6 +4,7 @@ import { WorkPreview } from "@/components/WorkPreview";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { ServiceArea } from "@/components/ServiceArea";
 import { InstagramFeed } from "@/components/InstagramFeed";
+import { ReviewCta } from "@/components/ReviewCta";
 import { CtaBand } from "@/components/ui";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <ServiceArea />
       <InstagramFeed />
+      <ReviewCta tone="white" />
       <CtaBand />
     </>
   );
