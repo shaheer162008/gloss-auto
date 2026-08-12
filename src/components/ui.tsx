@@ -76,10 +76,7 @@ export function SectionHeading({
 
 export function CtaBand() {
   return (
-    <section
-      id="cta-band"
-      className="mb-12 border-y border-white/10 bg-black text-white sm:mb-24"
-    >
+    <section id="cta-band" className="border-y border-white/10 bg-black text-white">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-12 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:gap-10 md:py-14 md:text-left">
         <div className="flex flex-col items-center md:items-start">
           <h2 className="font-display text-2xl font-semibold uppercase leading-tight tracking-[0.08em] sm:text-3xl">
@@ -110,7 +107,7 @@ export function CtaBand() {
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm border border-white/30 px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-white sm:w-auto"
           >
             <Icon src="/icons/email.svg" size={16} tone="onDark" />
-            Contact Form
+            Contact Page
           </Link>
         </div>
       </div>

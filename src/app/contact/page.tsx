@@ -31,8 +31,8 @@ export default function ContactPage() {
               Book your appointment
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">
-              Pick your service and time directly below. If you prefer a quick
-              chat first, call {site.phoneDisplay}.
+              Your choice: contact us first for a quick chat, or book your
+              appointment directly below. Call {site.phoneDisplay} any time.
             </p>
 
             <div className="relative z-0 mt-8 rounded-sm border border-border bg-surface p-2 sm:p-3 xl:p-4">
