@@ -6,23 +6,39 @@ export function PageHero({
   eyebrow,
   title,
   description,
+  align = "left",
 }: {
   eyebrow?: string;
   title: string;
   description: string;
+  align?: "left" | "center";
 }) {
+  const isCentered = align === "center";
+
   return (
     <section className="border-b border-border bg-surface bg-grain">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+      <div
+        className={`mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 ${
+          isCentered ? "text-center" : ""
+        }`}
+      >
         {eyebrow ? (
           <p className="font-display text-xs uppercase tracking-[0.28em] text-zinc-500">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold uppercase leading-[1.05] tracking-[0.04em] text-black sm:text-5xl">
+        <h1
+          className={`mt-3 font-display text-4xl font-semibold uppercase leading-[1.05] tracking-[0.04em] text-black sm:text-5xl ${
+            isCentered ? "mx-auto max-w-4xl" : "max-w-3xl"
+          }`}
+        >
           {title}
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
+        <p
+          className={`mt-4 text-base leading-relaxed text-zinc-600 sm:text-lg ${
+            isCentered ? "mx-auto max-w-3xl" : "max-w-2xl"
+          }`}
+        >
           {description}
         </p>
       </div>

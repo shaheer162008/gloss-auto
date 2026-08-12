@@ -60,3 +60,22 @@ body {
   );
   background-size: 10px 10px;
 }
+
+.square-booking-embed {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+  isolation: isolate;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.square-booking-embed iframe {
+  display: block;
+  width: 100% !important;
+  height: auto;
+  min-height: 0;
+  pointer-events: auto;
+  border: 0;
+}
