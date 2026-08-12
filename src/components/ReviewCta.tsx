@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 /** Google review link. Update this short URL if it ever changes. */
 const reviewUrl = "https://maps.app.goo.gl/xTAUhkgzdMmoUpycA";
 
@@ -19,6 +21,15 @@ export function ReviewCta({ tone = "surface" }: { tone?: "surface" | "white" }) 
           <Star />
           <Star />
         </div>
+
+        <div className="mt-8 rounded-sm border border-border bg-white p-2 sm:p-3">
+          <div id="shapo-widget-097c574af22bf5588593" />
+        </div>
+        <Script
+          id="shapo-embed-js"
+          src="https://cdn.shapo.io/js/embed.js"
+          strategy="afterInteractive"
+        />
 
         <p className="mt-6 font-display text-xs uppercase tracking-[0.28em] text-zinc-500">
           Google reviews
