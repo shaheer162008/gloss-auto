@@ -58,13 +58,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={site.phoneTel}
+          <Link
+            href="/contact"
             className="hidden h-10 items-center justify-center gap-2 rounded-sm bg-white px-4 text-sm font-semibold tracking-wide text-black transition hover:bg-zinc-200 sm:inline-flex"
           >
-            <Icon src="/icons/phone.svg" size={16} />
-            Call Now
-          </a>
+            <Icon src="/icons/email.svg" size={16} />
+            Message Now
+          </Link>
 
           <button
             type="button"
@@ -138,13 +138,13 @@ export function Header() {
           })}
 
           <div className="mt-4 border-t border-white/10 pt-4">
-            <a
-              href={site.phoneTel}
+            <Link
+              href="/contact"
               className="flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-white font-display text-sm font-semibold uppercase tracking-[0.14em] text-black transition hover:bg-zinc-100"
             >
-              <Icon src="/icons/phone.svg" size={18} />
-              Call Now
-            </a>
+              <Icon src="/icons/email.svg" size={18} />
+              Message Now
+            </Link>
           </div>
 
           <div className="mt-5 flex items-center justify-center">

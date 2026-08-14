@@ -5,9 +5,9 @@ import { site } from "@/lib/site";
 import { Icon } from "@/components/Icon";
 
 /**
- * Floating Instagram + call buttons, bottom-right corner.
+ * Floating Instagram + message + call buttons, bottom-right corner.
  * Shows on every page and screen size, but hides while the hero, CTA band,
- * or footer is on screen. Those sections already have their own call/follow
+ * or footer is on screen. Those sections already have their own contact/follow
  * options, so the buttons never sit on top of them.
  */
 export function MobileCallBar() {
@@ -46,6 +46,13 @@ export function MobileCallBar() {
         className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-300 bg-white text-black shadow-[0_4px_16px_rgba(0,0,0,0.15)] transition hover:bg-zinc-100"
       >
         <Icon src="/icons/instagram.svg" size={20} />
+      </a>
+      <a
+        href={site.phoneTel.replace("tel:", "sms:")}
+        aria-label={`Send SMS to ${site.phoneDisplay}`}
+        className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-300 bg-white text-black shadow-[0_4px_16px_rgba(0,0,0,0.15)] transition hover:bg-zinc-100"
+      >
+        <Icon src="/icons/sms.svg" size={20} />
       </a>
       <a
         href={site.phoneTel}

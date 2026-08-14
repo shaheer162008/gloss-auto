@@ -31,12 +31,12 @@ export default function NotFound() {
           >
             Contact us
           </Link>
-          <a
-            href={site.phoneTel}
+          <Link
+            href="/contact"
             className="inline-flex h-12 items-center justify-center rounded-sm border border-border bg-white px-7 font-display text-sm font-semibold uppercase tracking-[0.14em] text-black transition hover:border-black"
           >
-            Call now
-          </a>
+            Message now
+          </Link>
         </div>
 
         <p className="mt-6 text-sm text-zinc-500">

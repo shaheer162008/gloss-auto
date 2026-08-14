@@ -95,13 +95,13 @@ export function CtaBand() {
         </div>
 
         <div className="flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center md:justify-end">
-          <a
-            href={site.phoneTel}
+          <Link
+            href="/contact"
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm bg-white px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-black transition hover:bg-zinc-100 sm:w-auto"
           >
-            <Icon src="/icons/phone.svg" size={16} />
-            Call Now
-          </a>
+            <Icon src="/icons/email.svg" size={16} />
+            Message Now
+          </Link>
           <Link
             href="/contact"
             className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-sm border border-white/30 px-6 font-display text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:border-white sm:w-auto"

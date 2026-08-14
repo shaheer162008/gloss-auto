@@ -68,15 +68,24 @@ export default function ContactPage() {
                 <p className="font-display text-xs uppercase tracking-[0.22em] text-zinc-500">
                   Call
                 </p>
-                <a
-                  href={site.phoneTel}
-                  className="mt-2 inline-flex items-center justify-center gap-2 text-xl font-semibold text-black hover:underline"
-                >
-                  <Icon src="/icons/phone.svg" size={22} />
-                  {site.phoneDisplay}
-                </a>
-                <p className="mt-2 text-sm text-zinc-600">
-                  Not on WhatsApp. Phone calls only.
+                <div className="mt-3 flex flex-col items-center justify-center gap-2">
+                  <a
+                    href={site.phoneTel}
+                    className="inline-flex items-center justify-center gap-2 text-lg font-semibold text-black hover:underline"
+                  >
+                    <Icon src="/icons/phone.svg" size={20} />
+                    {site.phoneDisplay}
+                  </a>
+                  <a
+                    href={site.phoneTel.replace("tel:", "sms:")}
+                    className="inline-flex items-center justify-center gap-2 text-sm font-medium text-zinc-700 hover:underline"
+                  >
+                    <Icon src="/icons/sms.svg" size={18} />
+                    Text us
+                  </a>
+                </div>
+                <p className="mt-3 text-sm text-zinc-600">
+                  Phone calls welcome. For quick messages, send us a text.
                 </p>
               </div>
 
